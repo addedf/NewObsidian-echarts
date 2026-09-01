@@ -1,0 +1,33 @@
+{
+  "name": "linked-echarts",
+  "version": "0.1.0",
+  "description": "Interactive ECharts code blocks with native Obsidian note navigation and hover previews.",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "obsidian",
+    "echarts",
+    "markdown",
+    "charts",
+    "wikilinks"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@vitest/coverage-v8": "^4.1.11",
+    "esbuild": "0.25.5",
+    "obsidian": "^1.13.1",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.11"
+  }
+}

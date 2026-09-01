@@ -1,0 +1,27 @@
+.linked-echarts {
+  width: 100%;
+  margin: var(--size-4-4) 0;
+}
+
+.linked-echarts__canvas {
+  width: 100%;
+  min-height: 160px;
+  overflow: hidden;
+  border-radius: var(--radius-s);
+}
+
+.linked-echarts__canvas.is-linked {
+  cursor: pointer;
+}
+
+.linked-echarts__error {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-1);
+  padding: var(--size-4-3);
+  color: var(--text-error);
+  background: var(--background-modifier-error);
+  border: 1px solid var(--background-modifier-error-hover);
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-small);
+}

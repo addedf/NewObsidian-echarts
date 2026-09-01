@@ -1,0 +1,9 @@
+{
+  "id": "linked-echarts",
+  "name": "Linked ECharts",
+  "version": "0.1.0",
+  "minAppVersion": "1.8.0",
+  "description": "Render interactive ECharts in Markdown and link chart elements to Obsidian notes.",
+  "author": "Linked ECharts contributors",
+  "isDesktopOnly": false
+}
