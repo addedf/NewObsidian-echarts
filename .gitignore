@@ -1,6 +1,62 @@
+# Dependencies and generated build/test output
 node_modules/
-main.js
+/main.js
 *.map
 coverage/
+dist/
+*.tsbuildinfo
+test-results/
+playwright-report/
+
+# Generated design documents and local documentation navigation.
+# Canonical project documents live in Anotes, outside this repository.
+/PRODUCT.md
+/CONTRIBUTING.md
+/docs/
+/generated-docs/
+*.generated.md
+/CollaborationProjectInformation/
+
+# Local editor, AI-tool and Obsidian configuration
+.vscode/
+.idea/
+.codex/
+.claude/
+.cursor/
+.trae/
+.gemini/
+.qwen/
+.ace-tool/
+.fast-context/
+.workflow/
+.task/
+.obsidian/
+*.code-workspace
+/.mcp.json
+/AGENTS.md
+/CLAUDE.md
+/GEMINI.md
+
+# Local environment values; keep reusable examples eligible for tracking
+.env
+.env.*
+!.env.example
+!.env.template
+*.local
+*.local.*
+
+# Logs, caches and temporary files
+*.log
+.cache/
+.tmp/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
 .DS_Store
 Thumbs.db
+Desktop.ini
