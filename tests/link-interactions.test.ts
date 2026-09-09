@@ -58,10 +58,22 @@ describe("getNativeMouseEvent", () => {
     expect(getNativeMouseEvent({ event: { event } })).toBe(event);
   });
 
+  it("accepts events without preventDefault method when x/y exist", () => {
+    const event = {
+      clientX: 12,
+      clientY: 34,
+    };
+
+    expect(getNativeMouseEvent({ event: { event } })).toBe(event);
+  });
+
   it("rejects missing and non-mouse events", () => {
     expect(getNativeMouseEvent({})).toBeNull();
     expect(
       getNativeMouseEvent({ event: { event: { clientX: "12" } } }),
+    ).toBeNull();
+    expect(
+      getNativeMouseEvent({ event: { event: { clientY: 34 } } }),
     ).toBeNull();
   });
 });

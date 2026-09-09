@@ -5,6 +5,14 @@ export interface ChartInteractionParams {
   };
 }
 
+function hasClientPoint(value: unknown): value is { clientX: number; clientY: number } {
+  return (
+    isRecord(value) &&
+    typeof value.clientX === "number" &&
+    typeof value.clientY === "number"
+  );
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -55,15 +63,7 @@ export function getNativeMouseEvent(
   params: ChartInteractionParams,
 ): MouseEvent | null {
   const candidate = params.event?.event;
-  if (!isRecord(candidate)) {
-    return null;
-  }
-
-  if (
-    typeof candidate.clientX !== "number" ||
-    typeof candidate.clientY !== "number" ||
-    typeof candidate.preventDefault !== "function"
-  ) {
+  if (!isRecord(candidate) || !hasClientPoint(candidate)) {
     return null;
   }
 
